@@ -5,6 +5,7 @@ export const Nav = styled.nav`
     padding: 20px 0;
     display: inline-block;
     width: 100%;
+    
 `;
 
 export const StyledLink = styled(NavLink)`

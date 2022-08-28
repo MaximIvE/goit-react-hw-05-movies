@@ -1,8 +1,13 @@
+import {Routes, Route} from 'react-router-dom';
+
+import NotFoundPage from 'pages/NotFoundPage';
 
 const UseRoutes = () => {
 
     return (
-        <div>UseRoutes</div>
+        <Routes>
+            <Route path="*" element={<NotFoundPage/>}/>
+        </Routes>
     )
 }
 
