@@ -20,10 +20,10 @@ export const getQuery = async query => await instance.get('search/movie',{
     });
 
 // Запит повної інформації про фільм &language=en-US
-export const getDetals = async movie_id => await instance.get(`movie/${movie_id}`);
+export const getDetals = async movieId => await instance.get(`movie/${movieId}`);
 
 // запит інформації про акторський склад &language=en-US
-export const getCredits = async movie_id => await instance.get(`movie/${movie_id}/credits`);
+export const getCredits = async movieId => await instance.get(`movie/${movieId}/credits`);
 
 // запит оглядів для сторінки кінофільму &language=en-US&page=1
-export const getReviews = async movie_id => await instance.get(`movie/${movie_id}/reviews`);
+export const getReviews = async movieId => await instance.get(`movie/${movieId}/reviews`);
