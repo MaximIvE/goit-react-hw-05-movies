@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NotFound = styled.div`
+export const NotFoundSt = styled.div`
 height: 80vh;
 max-width: 1680px;
 display: flex;
