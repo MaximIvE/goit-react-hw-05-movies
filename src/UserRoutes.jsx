@@ -4,7 +4,7 @@ import Home from 'pages/HomePage';
 import MovieDetalist from 'pages/MovieDetalilsPage';
 import Cast from 'pages/CastPage/CastPage';
 import Refiews from 'pages/ReviewsPage/Refiews';
-import NotFound from 'pages/NotFoundPage';
+// import NotFound from 'pages/NotFoundPage';
 
 import Test from 'components/Test';
 
