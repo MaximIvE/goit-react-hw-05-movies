@@ -9,7 +9,7 @@ export const Title = styled.li`
     margin-bottom: 3em;
 `;
 
-export const H = styled.h2`
+export const H = styled.h3`
     margin-block-start: 0.4em;
     margin-block-end: 0.4em;
 `;
