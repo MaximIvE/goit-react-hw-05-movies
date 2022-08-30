@@ -18,7 +18,7 @@ const UseRoutes = () => {
                 <Route path="cast" element={<Cast/>}/>
                 <Route path="reviews" element={<Refiews/>}/>
             </Route>
-            <Route path="*" element={<NotFound/>}/>
+            <Route path="*" element={<Home/>}/>
         </Routes>
     )
 }
