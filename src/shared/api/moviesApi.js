@@ -23,7 +23,7 @@ export const getQuery = async query => await instance.get('search/movie',{
 export const getDetals = async movieId => await instance.get(`movie/${movieId}`);
 
 // запит інформації про акторський склад &language=en-US
-export const getCredits = async movieId => await instance.get(`movie/${movieId}/credits`);
+export const getCast = async movieId => await instance.get(`movie/${movieId}/credits`);
 
 // запит оглядів для сторінки кінофільму &language=en-US&page=1
 export const getReviews = async movieId => await instance.get(`movie/${movieId}/reviews`);

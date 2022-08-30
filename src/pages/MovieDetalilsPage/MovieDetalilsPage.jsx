@@ -1,11 +1,13 @@
 // import { Location } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useLocation, useNavigate, Outlet  } from "react-router-dom";
 
 import DetailsCard from 'components/DetailsCard';
+import AdditionalInformation from 'components/AdditionalInformation';
 import {getDetals} from '../../shared/api/moviesApi';
 
 import {DetailPAge} from './MovieDetalilsPage.styled';
+
 
 
 const MovieDetalist = () => {
@@ -35,17 +37,18 @@ const MovieDetalist = () => {
         };};
             fetchMovies();
     },[id]);
-
     return (
     <>
         <DetailPAge>
             <button type="button" onClick={() => navigate(back)}>Go back</button>
             { data &&   <DetailsCard data={data}/>}
             {loading && <h2>Loading...</h2>}
-            {error && <h2>Error.  Unable to display movies.</h2>}
-                
+            {error && <h2>Error.  Unable to display movies.</h2>}      
         </DetailPAge>
         <hr/>
+            {data && <AdditionalInformation id={data.id}/>}
+        <hr/>
+        <Outlet />
     </>
     )
 }

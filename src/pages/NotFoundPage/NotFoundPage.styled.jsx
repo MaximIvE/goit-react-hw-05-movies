@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 
 export const NotFoundSt = styled.div`
@@ -14,3 +15,5 @@ width: 450px;
 display: flex;
 align-items: center;
 `;
+
+

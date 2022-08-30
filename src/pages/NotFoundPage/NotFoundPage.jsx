@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { NotFoundSt, Context } from './NotFoundPage.styled';
 
 const NotFound = () => {
@@ -9,6 +10,7 @@ const NotFound = () => {
                 <hr width="2" size="44"></hr>
                 <h2>This page could not be found.</h2>
             </Context>
+            <Link to="/">to Home</Link>
         </NotFoundSt>
     )
 

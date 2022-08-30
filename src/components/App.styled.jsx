@@ -5,5 +5,5 @@ export const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
     background-color: #f6f6ef;
-    
+    min-height: 100vh;
 `;
