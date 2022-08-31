@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {Wrapper, Description, Img, ImgWrapper, H2} from './DetailsCard.styled';
 
 const DetailsCard = ({data}) => {
@@ -22,3 +23,13 @@ const DetailsCard = ({data}) => {
 }
 
 export default DetailsCard;
+
+DetailsCard.propTypes={
+    data: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        release_date: PropTypes.string.isRequired,
+        overview: PropTypes.string.isRequired,
+        genres: PropTypes.array.isRequired,
+        poster_path: PropTypes.string,
+      }).isRequired,
+};

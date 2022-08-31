@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { List } from './PostList.styled';
 
 const PostList = ({data=[]}) => {
@@ -11,3 +12,7 @@ const PostList = ({data=[]}) => {
 }
 
 export default PostList;
+
+PostList.propTypes={
+    data: PropTypes.array.isRequired,
+};

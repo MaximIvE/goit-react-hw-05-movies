@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import PostList from 'components/PostList';
 import { getPopular, getQuery } from '../../shared/api/moviesApi';
+import PropTypes from 'prop-types';
 import { PostsStyled } from './Posts.styled';
 
 const Posts = ({qwery}) => {
@@ -40,3 +41,7 @@ const Posts = ({qwery}) => {
 }
 
 export default Posts;
+
+Posts.propTypes={
+    qwery: PropTypes.string,
+};

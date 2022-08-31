@@ -35,4 +35,4 @@ export default memo(SearchForm);
 
 SearchForm.propTypes={
     setParams: PropTypes.func.isRequired,
-}
+};

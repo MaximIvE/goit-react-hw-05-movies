@@ -18,3 +18,9 @@ export const P = styled.p`
     margin-block-start: 0.4em;
     margin-block-end: 0.4em;
 `;
+
+export const Notification = styled.p`
+    padding: 0 20px 12px 20px;
+   font-style: italic;
+   font-size: 16px;
+`;

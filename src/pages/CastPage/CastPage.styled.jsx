@@ -25,3 +25,9 @@ export const Img = styled.img`
     max-width: 20%;
     min-width: 100px;
 `;
+
+export const Notification = styled.p`
+    padding: 0 20px 12px 20px;
+   font-style: italic;
+   font-size: 16px;
+`;

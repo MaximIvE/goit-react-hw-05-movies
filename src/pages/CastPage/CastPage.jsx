@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {getCast} from '../../shared/api/moviesApi';
 
-import {List, Title, H, P, Img} from './CastPage.styled';
+import {List, Title, H, P, Img, Notification} from './CastPage.styled';
 
 const Cast = () => {
     const [data, setData] = useState(()=>[]);
     const [error, setError] = useState(()=>null);
+    const [info, setInfo] = useState("");
 
     const {id} = useParams();
 
@@ -16,6 +17,7 @@ const Cast = () => {
             try{
                 const res = await getCast(id);
                 if ( res.status !== 200){ throw new Error (`${res.status} | ${res.statusText}`)};
+                if (res.data.cast.length === 0){setInfo("We don't have any reviews for this movie.")}
                     setData(res.data.cast);
         } catch (error) {
                 setError(error);
@@ -42,7 +44,8 @@ const Cast = () => {
 
  return <>
             {data && <List>{marcup()}</List>}
-            {error && <h2>No information.</h2>}     
+            {error && <Notification>No information.</Notification>} 
+            {info && <Notification>{info}</Notification>}    
         </>
 }
 

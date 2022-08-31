@@ -19,7 +19,7 @@ const MovieDetalist = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const back = location.state.from || "/";
+    const back = location.state?.from || "/";
 
     useEffect(()=>{
         const fetchMovies = async() => { 

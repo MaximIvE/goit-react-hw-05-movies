@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {getReviews} from '../../shared/api/moviesApi';
 
-import {List, Title, H, P} from './Refiews.styled';
+import {List, Title, H, P, Notification} from './Refiews.styled';
 
 const Refiews = () => {
     const [data, setData] = useState(()=>[]);
     const [error, setError] = useState(()=>null);
+    const [info, setInfo] = useState("");
 
     const {id} = useParams();
 
@@ -16,6 +17,7 @@ const Refiews = () => {
             try{
                 const res = await getReviews(id);
                 if ( res.status !== 200){ throw new Error (`${res.status} | ${res.statusText}`)};
+                if (res.data.results.length === 0){setInfo("We don't have any reviews for this movie.")}
                     setData(res.data.results);
         } catch (error) {
                 setError(error);
@@ -37,7 +39,8 @@ const Refiews = () => {
 
  return <>
             {data && <List>{marcup()}</List>}
-            {error && <h2>We don't have any reviews for this movie.</h2>}     
+            {error && <Notification>We don't have any reviews for this movie.</Notification>}     
+            {info && <Notification>{info}</Notification>}
         </>
 }
 

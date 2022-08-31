@@ -1,10 +1,11 @@
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {Wrapper, LinkSt} from './AdditionalInformation.styled';
 
 const AdditionalInformation = ({id}) => {
     const location =useLocation();
-    const back = location.state.from || "/";
-    // to={`/movies/${id}/cast`}
+    const back = location.state?.from || "/";
+    
     return (
         <Wrapper>
             <h3>Additional information</h3>
@@ -16,4 +17,8 @@ const AdditionalInformation = ({id}) => {
     )
 }
 
-export default AdditionalInformation
+export default AdditionalInformation;
+
+AdditionalInformation.propTypes={
+    id: PropTypes.number.isRequired,
+};
