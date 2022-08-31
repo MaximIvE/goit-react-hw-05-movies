@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
 import PostList from 'components/PostList';
-import { getPopular } from '../../shared/api/moviesApi';
+import { getPopular, getQuery } from '../../shared/api/moviesApi';
 import { PostsStyled } from './Posts.styled';
 
-const Posts = () => {
+const Posts = ({qwery}) => {
     const [data, setData] = useState(()=>[]);
     const [error, setError] = useState(()=>null);
     const [loading, setLoading] = useState(()=>false);
@@ -13,7 +13,9 @@ const Posts = () => {
         const fetchMovies = async() => {
         try{setError(null);
             setLoading(true);
-            const res = await getPopular();
+            let res = null;
+            if(qwery){res = await getQuery(qwery);} else {res = await getPopular();}
+            
                     if ( res.status !== 200){ throw new Error (`${res.status} | ${res.statusText}`)};
                     setLoading(false);
                     setData(res.data.results);
@@ -24,7 +26,7 @@ const Posts = () => {
                 setData([]);
         };};
             fetchMovies();
-    },[]);
+    },[qwery]);
     
     return (
         <PostsStyled>

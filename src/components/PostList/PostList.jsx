@@ -5,7 +5,7 @@ const PostList = ({data=[]}) => {
     const location = useLocation();
     const info = data.map(movie => 
         <li key={movie.id}>
-           <Link to={`/movies/${movie.id}`} state={{from: location.pathname}}>{movie.title}</Link> 
+           <Link to={`/movies/${movie.id}`} state={{from: location}}>{movie.title}</Link> 
         </li>);
     return <List>{info}</List>
 }

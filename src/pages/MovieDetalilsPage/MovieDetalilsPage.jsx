@@ -21,7 +21,6 @@ const MovieDetalist = () => {
 
     const back = location.state.from || "/";
 
-
     useEffect(()=>{
         const fetchMovies = async() => { 
         try{setError(null);
@@ -45,9 +44,9 @@ const MovieDetalist = () => {
             {loading && <h2>Loading...</h2>}
             {error && <h2>Error.  Unable to display movies.</h2>}      
         </DetailPAge>
-        <hr/>
+        { data && <hr/>}
             {data && <AdditionalInformation id={data.id}/>}
-        <hr/>
+        { data && <hr/>}
         <Outlet />
     </>
     )
