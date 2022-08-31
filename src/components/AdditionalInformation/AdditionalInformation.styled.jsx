@@ -7,4 +7,6 @@ padding: 12px 20px;
 
 export const LinkSt = styled(Link)`
 text-decoration: none;
+font-size: large;
+font-weight: 500;
 `;

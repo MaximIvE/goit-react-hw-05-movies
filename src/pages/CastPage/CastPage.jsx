@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {getCast} from '../../shared/api/moviesApi';
 
-import {List, Title, H, P} from './CastPage.styled';
+import {List, Title, H, P, Img} from './CastPage.styled';
 
 const Cast = () => {
     const [data, setData] = useState(()=>[]);
@@ -28,9 +28,13 @@ const Cast = () => {
     const marcup = () => {
         return  data.map(({id, name, character, profile_path}) => 
             <Title key={id}>
-                <img src={"https://image.tmdb.org/t/p/w200"+profile_path} alt={name}/>
-                <H>{name}</H>
-                <P>Character: {character}</P>
+                <figure>
+                    <Img src={"https://image.tmdb.org/t/p/w200"+profile_path} alt={name}/>
+                    <figcaption>
+                        <H>{name}</H>
+                        <P>Character: {character}</P>
+                    </figcaption>
+                </figure>
             </Title>
                 
             )
